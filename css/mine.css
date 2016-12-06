@@ -1,3 +1,6 @@
+* {
+  font-family: "微软雅黑";
+}
 #header {
   border-radius: 0;
   margin-bottom: 0;
@@ -22,6 +25,9 @@
 #banner_nav ul li a {
   text-align: center;
   line-height: 40px;
+}
+#banner_nav h2 {
+  padding-left: 200px;
 }
 #banner_nav a:hover {
   background: darkgrey;
@@ -55,4 +61,82 @@
 }
 .el-footer img {
   max-width: 100%;
+}
+#invest_title {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+#invest_btn span {
+  color: darkgrey;
+  margin-right: 40px;
+}
+#invest_table th {
+  font: "微软雅黑";
+  color: darkgray;
+  font-size: 20px;
+}
+#invest_table td {
+  line-height: 40px;
+}
+.bo_list {
+  border-color: none;
+}
+#cre_header {
+  background: #F4F8FA;
+  padding: 20px;
+  border-left: 2px solid dodgerblue;
+}
+#cre_header h2 {
+  color: dodgerblue;
+  margin-bottom: 20px;
+}
+#cre_header .word_right {
+  margin-left: 50px;
+}
+#cre_form {
+  position: relative;
+}
+#cre_form #cre_btn {
+  margin-left: 200px;
+}
+#cre_Rbox {
+  width: 300px;
+  height: 200px;
+  border: 1px solid darkgray;
+  box-shadow: #A9A9A9;
+  text-align: left;
+  padding: 10px;
+  position: absolute;
+  right: 20px;
+  top: 30px;
+}
+.cha_bank {
+  display: block;
+  width: 150px;
+  height: 30px;
+  background-image: url(img/bank_list.png) no-repeat;
+}
+.bank_img01 {
+  background-position: 0 0;
+}
+.binfo_img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+#binfo_text h4 {
+  padding: 5px 0 5px 0;
+}
+#binfo_text .ma {
+  margin-left: 15px;
+}
+#binfo_table {
+  margin-top: 10px;
+}
+#binfo_table tr {
+  font-size: 16px;
+}
+#binfo_table tr td {
+  height: 35px;
 }

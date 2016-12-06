@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>E-loan</title>
+		<link href="css/personal.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="js/bootstrap-3.3.2-dist/css/bootstrap.css" />
+		<script src="js/jquery/jquery-2.1.3.js"></script>
+		<script src="js/bootstrap-3.3.2-dist/js/bootstrap.js"></script>
+		<script src="js/mine.js"></script>
+	</head>
+
+	<body>
+		<header id="header" class="navbar navbar-inverse">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#xxx">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">
+						<span class="glyphicon glyphicon-phone-alt"></span>
+						<i>028-86261949</i>
+					</a>
+				</div>
+				<div class="navbar-collapse collapse" id="xxx">
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="#">首页</a>
+						</li>
+						<li>
+							<a href="#">skyline</a>
+						</li>
+						<li>
+							<a href="#">赶快充值</a>
+						</li>
+						<li>
+							<a href="#">注销</a>
+						</li>
+						<li>
+							<a href="#">帮助</a>
+						</li>
+						<li>
+							<a href="#">联系客服</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+
+		<div class="navbar navbar-default" id="banner_nav">
+			<div class="container">
+				<div class="nav navbar-header"><img src="img/logo.png" /></div>
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="#">首页</a>
+					</li>
+					<li>
+						<a href="#">我要投资</a>
+					</li>
+					<li>
+						<a href="#">我要借款</a>
+					</li>
+					<li>
+						<a href="#">个人中心</a>
+					</li>
+					<li>
+						<a href="#">新手指引</a>
+					</li>
+					<li>
+						<a href="#">关于我们</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- header ended-->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<ul class="list-group" id="per_list">
+						<li class="list-group-item list-group-item-info">
+							<a href="#">投资项目</a>
+						</li>
+						<li class="list-group-item list-group-item-info">
+							<a href="#">借款项目</a>
+							<ul class="list-group" style="margin-bottom: 0;">
+								<li class="list-group-item">
+									<a href="#">借款项目</a>
+								</li>
+								<li class="list-group-item">
+									<a href="#">还款明细</a>
+								</li>
+							</ul>
+						</li>
+						<li class="list-group-item list-group-item-info">
+							<a href="#">我的账户</a>
+							<ul class="list-group" style="margin-bottom: 0;">
+								<li class="list-group-item">
+									<a href="#">账户信息</a>
+								</li>
+								<li class="list-group-item" style="background: #337ab7;">
+									<a href="#" style="color: #fff;">实名认证</a>
+								</li>
+								<li class="list-group-item">
+									<a href="#">银行卡管理</a>
+								</li>
+								<li class="list-group-item">
+									<a href="#">登录记录</a>
+								</li>
+							</ul>
+						</li>
+						<li class="list-group-item list-group-item-info">
+							<a href="#">资产详情</a>
+							<ul class="list-group" style="margin-bottom: 0;">
+								<li class="list-group-item">
+									<a href="#">账户流水</a>
+								</li>
+								<li class="list-group-item">
+									<a href="#">充值明细</a>
+								</li>
+								<li class="list-group-item">
+									<a href="#">提现记录</a>
+								</li>
+								<li class="list-group-item">
+									<a href="#">收款明细</a>
+								</li>
+							</ul>
+						</li>
+						<li class="list-group-item list-group-item-info">
+							<a href="#">个人资料</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-md-9">
+					<div class="panel panel-default">
+
+						<div class="panel-heading">实名认证</div>
+						<form class="form-horizontal" action="##" id="cre_form">
+							<div class="form-group">
+								<p class="text-center text-danger">为保护您账户安全，实名认证成功之后不能修改信息，请认真填写！</p>
+							</div>
+							<div class="form-group">
+								<label for="inputEmail3" class="col-md-4 control-label">用户名</label>
+								<div class="input-group col-md-8">
+									<p class="form-control-static">小强</p>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputEmail3" class="col-md-4 control-label">姓名</label>
+								<div class="input-group col-md-4">
+									<input type="text" class="form-control" id="exampleInputAmount">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="inputEmail3" class="col-md-4 control-label">性别</label>
+								<div class="input-group col-md-4">
+									<select class="form-control">
+										<option value="man">男</option>
+										<option value="girl">女</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="inputEmail3" class="col-md-4 control-label">证件类型</label>
+								<div class="input-group col-md-4">
+									<select class="form-control">
+										<option value="身份证">身份证</option>
+										<option value="驾驶证">驾驶证</option>
+										<option value="军官证">军官证</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="inputEmail3" class="col-md-4 control-label">证件号码</label>
+								<div class="input-group col-md-4">
+									<input type="text" class="form-control" id="exampleInputAmount">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="inputEmail3" class="col-md-4 control-label">出生日期</label>
+								<div class="input-group col-md-4">
+									<input type="text" class="form-control" id="exampleInputAmount">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="inputEmail3" class="col-md-4 control-label">证件地址</label>
+								<div class="input-group col-md-6">
+									<input type="text" class="form-control" id="exampleInputAmount">
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-md-4 control-label">证件照片</label>
+								<div class="col-md-8">
+									<p class="text-primary">
+										请点击“选择图片”,选择证件的正反两面照片。
+									</p>
+									<a class="">查看样板</a>
+									<div>
+										<button class="" type="button">上传正面</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+	</body>
+
+</html>
