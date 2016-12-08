@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>E-loan</title>
+		<link href="css/personal.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="js/bootstrap-3.3.2-dist/css/bootstrap.css" />
+		<script src="js/jquery/jquery-2.1.3.js"></script>
+		<script src=""></script>
+		<script src="js/bootstrap-3.3.2-dist/js/bootstrap.js"></script>
+		<script src="js/mine.js"></script>
+		<script>
+			$(function() {
+				$.ajax({
+					type: "get",
+					url: "http://localhost:3000/mockapi",
+					async: false,
+					dataType: "jsonp",
+					success: function(data) {
+						//写显示表格的业务逻辑
+						console.log(data);
+						//1 获取到表格的tbody
+						//2 循环 data数据   拼接tr 装上td
+						//3 把tr 添加到tbody 
+						
+						for (var i in data){
+							var txt = '';
+							var arr = data[i];
+							for(var j in arr){
+								txt +="<tr>";
+								txt += "<td>"+arr[j].id+"</td>";
+								txt += "<td>"+arr[j].name+"</td>";
+								txt += "<td>"+arr[j].idCard+"</td>";
+								txt += "<td>"+arr[j].phone+"</td>";
+								txt += "<td>"+arr[j].city+"</td>";
+								txt += "<td>"+arr[j].status+"</td>";
+								txt += "<td><button class='btn btn-primary' data-cmd='edit'>编辑</button><button class='btn btn-danger' data-cmd='del'>删除</button></td>"
+								txt += "</tr>"
+							}
+						}
+						$(txt).appendTo('#table tbody')
+					},
+					error: function(err) {
+						console.log(err);
+					}
+				});
+			})
+		</script>
+	</head>
+
+	<body>
+		<header id="header" class="navbar navbar-inverse">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#xxx">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">
+						<span class="glyphicon glyphicon-phone-alt"></span>
+						<i>028-86261949</i>
+					</a>
+				</div>
+				<div class="navbar-collapse collapse" id="xxx">
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="#">首页</a>
+						</li>
+						<li>
+							<a href="#">skyline</a>
+						</li>
+						<li>
+							<a href="#">赶快充值</a>
+						</li>
+						<li>
+							<a href="#">注销</a>
+						</li>
+						<li>
+							<a href="#">帮助</a>
+						</li>
+						<li>
+							<a href="#">联系客服</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</header>
+
+		<div class="navbar navbar-default" id="banner_nav">
+			<div class="container">
+				<div class="nav navbar-header"><img src="img/logo.png" /></div>
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="#">首页</a>
+					</li>
+					<li>
+						<a href="#">我要投资</a>
+					</li>
+					<li>
+						<a href="#">我要借款</a>
+					</li>
+					<li>
+						<a href="#">个人中心</a>
+					</li>
+					<li>
+						<a href="#">新手指引</a>
+					</li>
+					<li>
+						<a href="#">关于我们</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- header ended-->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<ul class="list-group" id="per_list">
+						<li class="list-group-item list-group-item-info">
+							<a href="#">投资项目</a>
+						</li>
+						<li class="list-group-item list-group-item-info">
+							<a href="#">借款项目</a>
+							<ul class="list-group" style="margin-bottom: 0;">
+								<li class="list-group-item">
+									<a href="#">借款项目</a>
+								</li>
+								<li class="list-group-item">
+									<a href="#">还款明细</a>
+								</li>
+							</ul>
+						</li>
+						<li class="list-group-item list-group-item-info">
+							<a href="#">我的账户</a>
+							<ul class="list-group" style="margin-bottom: 0;">
+								<li class="list-group-item">
+									<a href="#">账户信息</a>
+								</li>
+								<li class="list-group-item" style="background: #337ab7;">
+									<a href="#" style="color: #fff;">实名认证</a>
+								</li>
+								<li class="list-group-item">
+									<a href="#">银行卡管理</a>
+								</li>
+								<li class="list-group-item">
+									<a href="#">登录记录</a>
+								</li>
+							</ul>
+						</li>
+						<li class="list-group-item list-group-item-info">
+							<a href="#">资产详情</a>
+							<ul class="list-group" style="margin-bottom: 0;">
+								<li class="list-group-item">
+									<a href="#">账户流水</a>
+								</li>
+								<li class="list-group-item">
+									<a href="#">充值明细</a>
+								</li>
+								<li class="list-group-item">
+									<a href="#">提现记录</a>
+								</li>
+								<li class="list-group-item">
+									<a href="#">收款明细</a>
+								</li>
+							</ul>
+						</li>
+						<li class="list-group-item list-group-item-info">
+							<a href="#">个人资料</a>
+						</li>
+					</ul>
+				</div>
+				<!-- 功能页面 -->
+				<div class="col-sm-9">
+					<div class="panel panel-default">
+						<div class="panel-heading clearfix">
+							<span class="pull-left">实名认证管理</span>
+							<span class="pull-right"><a href="" id="tianjia" class="btn btn-success" data-toggle="modal" data-target="#create">添加</a></span>
+						</div>
+						<table class="table table-bordered" id="table">
+							<tbody>
+								<tr>
+									<th>id</th>
+									<th>姓名</th>
+									<th>身份证</th>
+									<th>电话</th>
+									<th>城市</th>
+									<th>状态</th>
+									<th>操作</th>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="7">
+										<ul class="pagination" id="pagination">
+
+										</ul>
+									</td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!--modal-->	
+		<div class="modal fade" id="mymodel"  data-backdrop="false">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+							<h4 class="col-md-3 modal-title">添加用户</h4>
+							<button class="close col-md-3" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal" id="myform">					 
+							<!--first modal-->
+							<div class="form-group">
+									<label class="control-label col-md-3">id：</label>
+									<input type="text" name='id' class="input-group col-md-6" />
+							</div>	
+							<!--second modal-->
+							<div class="form-group">
+									<label class="control-label col-md-3">姓名：</label>
+									<input class="input-group col-md-6" name='username' type="password" />
+							</div>
+							<!--second modal-->
+							<div class="form-group">
+									<label class="control-label col-md-3">身份证：</label>
+									<input class="input-group col-md-6" name='idnum' type="password" />
+							</div>
+							<!--second modal-->
+							<div class="form-group">
+									<label class="control-label col-md-3">电话：</label>
+									<input class="input-group col-md-6" name='phone' type="password" />
+							</div>
+							<!--second modal-->
+							<div class="form-group">
+									<label class="control-label col-md-3">城市：</label>
+									<input class="input-group col-md-6" name='city' type="password" />
+							</div>
+							<!--second modal-->
+							<div class="form-group">
+									<label class="control-label col-md-3">状态：</label>
+									<div class="input-group col-md-3" name='status'>
+										<select class="form-control">
+											<option>未审核</option>
+											<option>已审核</option>
+											<option>审核通过</option>
+										</select>
+									</div>	
+							</div>
+						</form>
+					</div>
+					
+					<div class="modal-footer">
+						<button class="btn btn-primary" id='btn-add'>添加</button>
+						<button class="btn btn-danger" id="btn_close">取消</button>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			$(function(){
+				$("#tianjia").click(function(){
+					$("#mymodel").modal("show");
+				})
+			})
+			
+			$(function(){
+				$("#btn_close").click(function(){
+					$("#mymodel").modal("hide");
+				})
+			})
+			
+			//保存的业务逻辑
+			$('#btn-add').click(function(){
+				var params = $('#myform').serialize();
+				$.get('http://localhost:3000/creat',params,function(){
+					console.log(err);	
+				})
+							$('#myform').find('input').val('');
+							$('#mymodel').modal('hide');
+			});
+			
+			//数据编辑
+			$('#table tbody').on("click","td button",function(){
+				var cmd = $(this).attr("data-cmd");//得到btn的位置属性
+				console.log(cmd);
+				var $tr = $(this).closest('tr');
+				var $id = $tr.find('td').eq(0).html();
+				console.log($id);
+				var $name = $tr.find('td').eq(1).html();
+				var $idnum = $tr.find('td').eq(2).html();
+				var $phone = $tr.find('td').eq(3).html();
+			})
+		</script>		
+	</body>
+
+</html>
